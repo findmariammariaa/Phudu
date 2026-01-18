@@ -2,11 +2,23 @@ import React from "react";
 import { useLocation } from "react-router";
 
 function Doctor() {
+  const today = new Date();
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const todayName = days[today.getDay()];
+
   const location = useLocation();
   const doctor = location.state?.doctor;
   console.log(doctor);
   return (
-    <div className=" bg-gray-100 min-h-screen py-10 flex flex-col gap-10">
+    <div className=" bg-gray-100 min-h-screen flex flex-col gap-10">
       <div className="p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white rounded-3xl shadow-lg">
         <h1 className="text-2xl font-bold ">Doctor's Profile Details</h1>
         <p className="text-sm text-gray-600 w-5/6 text-center">
@@ -27,12 +39,8 @@ function Doctor() {
         />
         <div className="flex flex-col w-4/5">
           <h1 className="text-3xl font-bold">{doctor.name}</h1>
-          <h2 className="text-xl text-gray-600">
-            {doctor.education}
-          </h2>
-          <p className="text-xl text-gray-600 mb-2">
-            {doctor.speciality}
-          </p>
+          <h2 className="text-xl text-gray-600">{doctor.education}</h2>
+          <p className="text-xl text-gray-600 mb-2">{doctor.speciality}</p>
           <p className="text-gray-400 text-md">Working at</p>
           <p className="text-xl font-bold text-black my-4">
             {" "}
@@ -42,7 +50,6 @@ function Doctor() {
             <span className="text-xl font-bold mt-1 ">®</span>Reg No:{" "}
             {doctor.registrationNumber}
           </p>
-          
 
           <div className="flex flex-wrap gap-2 items-center  my-2">
             <h1 className="text-sm font-semibold">Availability </h1>
@@ -55,11 +62,53 @@ function Doctor() {
               </span>
             ))}
           </div>
-           <div className="flex flex-wrap gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center">
             <h1 className="text-sm font-semibold">Consultation Fee: </h1>
-            <h2 className="text-sm text-blue-500 font-semibold">Taka :{doctor.fee} <span className="text-sm text-gray-400">(inc. Vat)</span> Per consultation</h2>
+            <h2 className="text-sm text-blue-500 font-semibold">
+              Taka :{doctor.fee}{" "}
+              <span className="text-sm text-gray-400">(inc. Vat)</span> Per
+              consultation
+            </h2>
           </div>
         </div>
+      </div>
+
+      <div className="p-12 mx-10 flex flex-col gap-4 bg-white rounded-3xl shadow-lg mb-20">
+        <h1 className="text-2xl font-bold text-center">Book an Appointment</h1>
+        <div
+          className="
+            flex justify-between w-full items-center pt-3
+            border-t border-dashed border-t-gray-400
+            "
+        >
+          <h1 className="text-md font-bold">Availability</h1>
+          {doctor.availability.includes(todayName) ? (
+            <span className="btn btn-soft btn-sm btn-success rounded-full cursor-default pointer-events-none">
+              Doctor Available Today
+            </span>
+          ) : (
+            <span className="btn btn-soft btn-sm btn-error rounded-full cursor-default pointer-events-none">
+              Doctor Not Available Today
+            </span>
+          )}
+         
+        </div>
+         <hr className=" border-gray-200 border mt-0 w-full" />
+          
+        <p className="text-sm bg-orange-50 text-orange-400 items-center rounded-full justify-start w-max p-2">
+          ⓘ Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.
+        </p>
+        {
+            doctor.availability.includes(todayName) ? (
+            <button className="btn w-full btn-primary mt-4 px-8 py-3 rounded-full font-bold">
+            Book Appointment Now
+        </button>)
+        :(
+        <button className="btn w-full btn-disabled btn-primary mt-4 px-8 py-3 rounded-full font-bold">
+            Book Appointment Now
+        </button>)
+        }
+        
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const Header = () => {
           </div>
           <div className="flex">
             
-          <img src="img/logo.png" alt="logo" className="size-10"/>
+          <img src="/public/img/logo.png" alt="logo" className="size-10"/>
           <a className="btn btn-ghost text-xl font-extrabold">PHUDU</a>
           </div>
         </div>

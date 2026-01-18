@@ -9,6 +9,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Error from "../pages/Error/Error";
 import Booking from "../components/Booking/Booking";
 import ErrorMsg from "../components/ErrorMsg/ErrorMsg";
+import Doctor from "../components/Doctor/Doctor";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -18,11 +19,10 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () => fetch("/doctors.json").then(res => res.json())
-
       },
       {
-        path: "details",
-        Component: Details,
+        path: "doctors/:id",
+        Component: Doctor,
       },
       {
         path: "booking",

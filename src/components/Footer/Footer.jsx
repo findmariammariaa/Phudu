@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="flex shadow-md w-full flex-col footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10">
       <div className="flex">
-        <img src="img/logo.png" alt="logo" className="size-10" />
+        <img src="/img/logo.png" alt="logo" className="size-10" />
         <a className="btn btn-ghost text-xl font-extrabold">PHUDU</a>
       </div>
       <nav className="grid grid-flow-col gap-4">
@@ -16,7 +16,7 @@ const Footer = () => {
 
         <NavLink to={"/contact"}>Contact Us</NavLink>
       </nav>
-      <hr className=" border-base-300 border-2 w-6/7" />
+      <hr className=" border-base-300 border-1 w-6/8" />
 
       <nav>
         <div className="grid grid-flow-col gap-3">

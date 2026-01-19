@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
         Component: Doctor,
       },
       {
-        path: "booking",
+        path: "my-appointments",
         Component: Booking,
       },
     ],

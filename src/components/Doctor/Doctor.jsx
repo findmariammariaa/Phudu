@@ -1,8 +1,8 @@
-import React from "react";
-import { useLocation } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function Doctor() {
-  const today = new Date();
+   const today = new Date();
   const days = [
     "Sunday",
     "Monday",
@@ -17,6 +17,27 @@ function Doctor() {
   const location = useLocation();
   const doctor = location.state?.doctor;
   console.log(doctor);
+  const [isBooked, setIsBooked] = useState(false)
+  useEffect(() => {
+  const storedBookings = JSON.parse(localStorage.getItem("BookedAppointments")) || [];
+
+  if (storedBookings.includes(doctor?.id)) {
+    setIsBooked(true);
+  }
+}, [doctor]);
+const handleBooking = () => {
+  const storedBookings = JSON.parse(localStorage.getItem("BookedAppointments")) || [];
+
+  if (!storedBookings.includes(doctor.id)) {
+    storedBookings.push(doctor.id);
+    localStorage.setItem("BookedAppointments", JSON.stringify(storedBookings));
+  }
+
+  setIsBooked(true);
+  alert("Appointment booked successfully!");
+};
+
+
   return (
     <div className=" bg-gray-100 min-h-screen flex flex-col gap-10">
       <div className="p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white rounded-3xl shadow-lg">
@@ -91,24 +112,36 @@ function Doctor() {
               Doctor Not Available Today
             </span>
           )}
-         
         </div>
-         <hr className=" border-gray-200 border mt-0 w-full" />
-          
+        <hr className=" border-gray-200 border mt-0 w-full" />
+
         <p className="text-sm bg-orange-50 text-orange-400 items-center rounded-full justify-start w-max p-2">
-          ⓘ Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.
+          ⓘ Due to high patient volume, we are currently accepting appointments
+          for today only. We appreciate your understanding and cooperation.
         </p>
-        {
-            doctor.availability.includes(todayName) ? (
-            <button className="btn w-full btn-primary mt-4 px-8 py-3 rounded-full font-bold">
+        {doctor.availability.includes(todayName) ? (
+          isBooked ? (
+            <button
+              className="btn w-full btn-success mt-4 px-8 py-3 rounded-full font-bold cursor-default"
+              onClick={() => alert("Appointment already booked!")}
+            >
+              Appointment Booked
+            </button>
+          ) : (
+            <Link to="/my-appointments" state={{ doctor }}>
+              <button
+                className="btn w-full btn-primary mt-4 px-8 py-3 rounded-full font-bold"
+                onClick={() => handleBooking()}
+              >
+                Book Appointment Now
+              </button>
+            </Link>
+          )
+        ) : (
+          <button className="btn w-full btn-disabled btn-primary mt-4 px-8 py-3 rounded-full font-bold">
             Book Appointment Now
-        </button>)
-        :(
-        <button className="btn w-full btn-disabled btn-primary mt-4 px-8 py-3 rounded-full font-bold">
-            Book Appointment Now
-        </button>)
-        }
-        
+          </button>
+        )}
       </div>
     </div>
   );

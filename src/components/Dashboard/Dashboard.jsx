@@ -1,5 +1,5 @@
 import React from "react";
-
+import CountUp from 'react-countup';
 function Dashboard() {
   return (
     <div className="flex flex-col justify-center items-center gap-6 my-8">
@@ -30,7 +30,7 @@ function Dashboard() {
             srcset=""
             className="w-12 h-auto"
           />
-          <h2 className="text-5xl font-bold">467+</h2>
+          <h2 className="text-5xl font-bold"><CountUp delay={1} start={400} end={500} duration={5000} />+</h2>
           <h3 className="text-xl text-gray-500 font-semibold">Total Reviews</h3>
         </div>
 
@@ -41,8 +41,9 @@ function Dashboard() {
             srcset=""
             className="w-12 h-auto"
           />
-          <h2 className="text-5xl font-bold">1900+</h2>
-          <h3 className="text-xl ftext-gray-500 font-semibold">Patients</h3>
+          <h2 className="text-5xl font-bold"><CountUp delay={0} start={1900} end={2000} duration={1500} />+</h2>
+
+          <h3 className="text-xl text-gray-500 font-semibold">Patients</h3>
         </div>
 
          <div className="flex flex-col gap-3 p-10 bg-white rounded-2xl shadow">

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";
 
 function Doctor() {
-   const today = new Date();
+  const today = new Date();
   const days = [
     "Sunday",
     "Monday",
@@ -17,26 +18,31 @@ function Doctor() {
   const location = useLocation();
   const doctor = location.state?.doctor;
   console.log(doctor);
-  const [isBooked, setIsBooked] = useState(false)
+  const [isBooked, setIsBooked] = useState(false);
   useEffect(() => {
-  const storedBookings = JSON.parse(localStorage.getItem("BookedAppointments")) || [];
+    const storedBookings =
+      JSON.parse(localStorage.getItem("BookedAppointments")) || [];
 
-  if (storedBookings.includes(doctor?.id)) {
+    if (storedBookings.includes(doctor?.id)) {
+      setIsBooked(true);
+    }
+  }, [doctor]);
+  const handleBooking = () => {
+    toast.success(`${doctor.name} booked successfully!`);
+    const storedBookings =
+      JSON.parse(localStorage.getItem("BookedAppointments")) || [];
+
+    if (!storedBookings.includes(doctor.id)) {
+      storedBookings.push(doctor.id);
+      localStorage.setItem(
+        "BookedAppointments",
+        JSON.stringify(storedBookings),
+      );
+    }
+
     setIsBooked(true);
-  }
-}, [doctor]);
-const handleBooking = () => {
-  const storedBookings = JSON.parse(localStorage.getItem("BookedAppointments")) || [];
-
-  if (!storedBookings.includes(doctor.id)) {
-    storedBookings.push(doctor.id);
-    localStorage.setItem("BookedAppointments", JSON.stringify(storedBookings));
-  }
-
-  setIsBooked(true);
-  alert("Appointment booked successfully!");
-};
-
+    ;
+  };
 
   return (
     <div className=" bg-gray-100 min-h-screen flex flex-col gap-10">
@@ -105,11 +111,11 @@ const handleBooking = () => {
           <h1 className="text-md font-bold">Availability</h1>
           {doctor.availability.includes(todayName) ? (
             <span className="btn btn-soft btn-sm btn-success rounded-full cursor-default pointer-events-none">
-              Doctor Available Today
+              Doctor is available today
             </span>
           ) : (
             <span className="btn btn-soft btn-sm btn-error rounded-full cursor-default pointer-events-none">
-              Doctor Not Available Today
+              Doctor is unavailable today
             </span>
           )}
         </div>
@@ -123,7 +129,7 @@ const handleBooking = () => {
           isBooked ? (
             <button
               className="btn w-full btn-success mt-4 px-8 py-3 rounded-full font-bold cursor-default"
-              onClick={() => alert("Appointment already booked!")}
+              onClick={() => toast.error("You have already booked this appointment.") }
             >
               Appointment Booked
             </button>

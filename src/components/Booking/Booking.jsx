@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router";
 import Chart from "../Dashboard/Chart";
 
 const Booking = () => {
-    document.title = "My Appointments - Phudu";
   const alldoctors = useLoaderData();
 
   const bookedIds =
@@ -29,15 +28,15 @@ const Booking = () => {
   return (
     
     <div className="mx-auto px-8 flex flex-col gap-4 bg-gray-100 min-h-screen">
-        <Chart doctors={doctors}/>
-      <h1 className="text-3xl font-bold text-center">
+      {doctors.length > 0 && <Chart doctors={doctors}/>}
+      <h1 className="text-2xl font-bold text-center m-10">
         My Today Appointments
       </h1>
-
-      <p className="text-sm max-w-3xl mx-auto text-gray-500 text-center">
+      {doctors.length > 0?(<p className="text-sm max-w-3xl mx-auto text-gray-500 text-center">
         Our platform connects you with verified, experienced doctors across
         various specialties — all at your convenience.
-      </p>
+      </p>):null}
+      
 
       {doctors.length > 0 ? (
         doctors.map((doctor) => (
@@ -69,9 +68,12 @@ const Booking = () => {
           </div>
         ))
       ) : (
-        <h1 className="text-xl font-semibold text-center mt-10">
+        <div className="flex flex-col p-5 justify-center items-center">
+          <h1 className="text-md font-semibold text-center">
           No Appointments Booked Yet
         </h1>
+        <button className="btn btn-primary mt-4" onClick={() => window.location.href = '/'}>Go to Home</button>
+        </div>
       )}
     </div>
   );

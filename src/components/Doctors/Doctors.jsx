@@ -40,7 +40,7 @@ const todayName = days[today.getDay()];
               ) :
               (
                  <span className="btn btn-soft btn-error rounded-full cursor-default pointer-events-none"> 
-                Not Available
+                Unvailable
               </span>
               )
               }
@@ -52,9 +52,10 @@ const todayName = days[today.getDay()];
 
             <h2 className="text-xl font-bold">{doctor.name}</h2>
 
-            <p className="border-b-2 border-dashed border-b-gray-300 pb-2 text-sm">
-              {doctor.speciality}, {doctor.education}
+            <p className="text-sm">
+              {doctor.education}
             </p>
+            <p className="border-b-2 border-dashed border-b-gray-300 pb-2 text-sm">{doctor.speciality}, {doctor.designation}</p>
 
             <p className="text-sm  items-center flex ">
               <span className="text-xl font-bold mt-1">®</span>Reg No:{" "}

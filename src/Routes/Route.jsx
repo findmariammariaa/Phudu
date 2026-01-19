@@ -13,7 +13,8 @@ import Doctor from "../components/Doctor/Doctor";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Root,
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         index: true,
@@ -30,11 +31,6 @@ export const router = createBrowserRouter([
         loader: () => fetch("/doctors.json").then(res => res.json())
       },
     ],
-  },
-  {
-    path: "error",
-    Component: Error,
-    children: [{ index: true, Component: ErrorMsg }],
   },
   {
     path: "blogs",

@@ -1,11 +1,80 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData } from "react-router";
+import Chart from "../Dashboard/Chart";
 
 const Booking = () => {
-    return (
-        <div>
-            <h1>This is booking page</h1>
-        </div>
+    document.title = "My Appointments - Phudu";
+  const alldoctors = useLoaderData();
+
+  const bookedIds =
+    JSON.parse(localStorage.getItem("BookedAppointments")) || [];
+
+  const doctors = alldoctors.filter((doctor) =>
+    bookedIds.includes(doctor.id)
+  );
+
+  const handleCancel = (id) => {
+    const updatedBookings = bookedIds.filter(
+      (doctorId) => doctorId !== id
     );
+
+    localStorage.setItem(
+      "BookedAppointments",
+      JSON.stringify(updatedBookings)
+    );
+
+    window.location.reload(); // simple refresh
+  };
+
+  return (
+    
+    <div className="mx-auto px-8 flex flex-col gap-4 bg-gray-100 min-h-screen">
+        <Chart doctors={doctors}/>
+      <h1 className="text-3xl font-bold text-center">
+        My Today Appointments
+      </h1>
+
+      <p className="text-sm max-w-3xl mx-auto text-gray-500 text-center">
+        Our platform connects you with verified, experienced doctors across
+        various specialties — all at your convenience.
+      </p>
+
+      {doctors.length > 0 ? (
+        doctors.map((doctor) => (
+          <div
+            key={doctor.id}
+            className="p-6 bg-white rounded-xl shadow-sm flex flex-col gap-4"
+          >
+            <div className="flex justify-between border-b rounded-xl border-dashed border-gray-400 pb-3">
+              <div>
+                <h1 className="text-2xl font-semibold">{doctor.name}</h1>
+                <h2 className="text-lg font-semibold text-gray-400">
+                  {doctor.speciality}, {doctor.education}
+                </h2> 
+              </div>
+
+              <div className="flex items-center">
+                <h1 className="font-semibold text-md text-gray-400">
+                  Appointment Fee: {doctor.fee} + VAT
+                </h1>
+              </div>
+            </div>
+
+            <button
+              className="btn btn-error font-bold btn-outline mt-2 rounded-full"
+              onClick={() => handleCancel(doctor.id)}
+            >
+              Cancel Appointment
+            </button>
+          </div>
+        ))
+      ) : (
+        <h1 className="text-xl font-semibold text-center mt-10">
+          No Appointments Booked Yet
+        </h1>
+      )}
+    </div>
+  );
 };
 
 export default Booking;

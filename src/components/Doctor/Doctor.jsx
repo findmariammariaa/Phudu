@@ -57,7 +57,7 @@ function Doctor() {
           patients.
         </p>
       </div>
-      <div className="p-6 lg:p-12 mx-10 flex-col lg:flex justify-center items-center gap-10 bg-white rounded-3xl shadow-lg">
+      <div className="p-6 lg:p-12 mx-10 lg:flex justify-center items-center gap-10 bg-white rounded-3xl shadow-lg">
         <img
           src="/img/doctor-sample.png"
           alt=""

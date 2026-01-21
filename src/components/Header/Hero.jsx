@@ -40,12 +40,12 @@ function Hero() {
           </div>
           <div className="mt-2 flex justify-center gap-2 mx-auto max-w-md py-4">
             <img
-              src="/public/img/banner-img-1.png"
+              src="/img/banner-img-1.png"
               alt=""
               className="w-1/2 lg:w-full  h-auto object-contain"
             />
             <img
-              src="/public/img/banner-img-1.png"
+              src="/img/banner-img-1.png"
               alt=""
               className="w-1/2 lg:w-full h-auto object-contain"
             />

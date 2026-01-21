@@ -50,7 +50,7 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <NavLink to={"/"} >Home</NavLink>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
                 <NavLink to={"/my-appointments"}>My-Booking</NavLink>

@@ -19,21 +19,34 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch("/doctors.json").then(res => res.json())
+        loader: () => fetch("/doctors.json").then((res) => res.json()),
       },
       {
         path: "doctors/:id",
-        Component: Doctor,
+        element: <Doctor />,
+        loader: async ({ params }) => {
+          const res = await fetch("/doctors.json");
+          const doctors = await res.json();
+
+          const doctor = doctors.find((d) => String(d.id) === params.id);
+
+          if (!doctor) {
+            throw new Response("Doctor not found", { status: 404 });
+          }
+
+          return doctor;
+        },
       },
+
       {
         path: "my-appointments",
         Component: Booking,
-        loader: () => fetch("/doctors.json").then(res => res.json())
+        loader: () => fetch("/doctors.json").then((res) => res.json()),
+      },
+      {
+        path: "blogs",
+        Component: Blogs,
       },
     ],
-  },
-  {
-    path: "blogs",
-    Component: Blogs,
   },
 ]);

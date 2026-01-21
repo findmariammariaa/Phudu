@@ -14,7 +14,7 @@ function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-9/10 mx-auto mb-25">
         <div className="flex flex-col gap-3 p-10 bg-white rounded-2xl shadow">
           <img
-            src="/public/img/success-doctor.png"
+            src="/img/success-doctor.png"
             alt=""
             srcset=""
             className="w-12 h-auto"
@@ -25,7 +25,7 @@ function Dashboard() {
 
          <div className="flex flex-col gap-3 p-10 bg-white rounded-2xl shadow">
           <img
-            src="/public/img/success-review.png"
+            src="/img/success-review.png"
             alt=""
             srcset=""
             className="w-12 h-auto"
@@ -36,7 +36,7 @@ function Dashboard() {
 
          <div className="flex flex-col gap-3 p-10 bg-white rounded-2xl shadow">
           <img
-            src="/public/img/success-patients.png"
+            src="/img/success-patients.png"
             alt=""
             srcset=""
             className="w-12 h-auto"
@@ -48,7 +48,7 @@ function Dashboard() {
 
          <div className="flex flex-col gap-3 p-10 bg-white rounded-2xl shadow">
           <img
-            src="/public/img/success-staffs.png"
+            src="/img/success-staffs.png"
             alt=""
             srcset=""
             className="w-12 h-auto"

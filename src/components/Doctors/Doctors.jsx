@@ -9,10 +9,10 @@ const todayName = days[today.getDay()];
   const [showAll, setShowAll] = useState(false);
   const displayedDoctors = showAll ? doctors : doctors.slice(0, 6);
   return (
-    <div className="flex flex-col justify-center items-center gap-6 mx-10 my-8">
-      <h1 className="text-2xl font-extrabold mx-auto mt-4">Our Best Doctors</h1>
+    <div className="flex flex-col justify-center items-center gap-2 lg:gap-6 mx-3 lg:mx-10 my-3 lg:my-8">
+      <h1 className="text-xl lg:text-2xl font-semibold lg:font-extrabold mx-auto mt-2 lg:mt-4">Our Best Doctors</h1>
 
-      <p className="text-sm max-w-3xl mx-auto text-center">
+      <p className="text-xs lg:text-sm max-w-3xl mx-auto text-center">
         Our platform connects you with verified, experienced doctors across
         various specialties — all at your convenience. Whether it's a routine
         checkup or urgent consultation, book appointments in minutes and receive

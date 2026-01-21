@@ -45,10 +45,10 @@ function Doctor() {
   };
 
   return (
-    <div className=" bg-gray-100 min-h-screen flex flex-col gap-10">
-      <div className="p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white rounded-3xl shadow-lg">
-        <h1 className="text-2xl font-bold ">Doctor's Profile Details</h1>
-        <p className="text-sm text-gray-600 w-5/6 text-center">
+    <div className=" bg-gray-100 min-h-screen flex flex-col gap-6 lg:gap-10">
+      <div className="p-1 lg:p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white rounded-3xl shadow-lg">
+        <h1 className="text-xl lg:text-2xl font-bold mt-4 ">Doctor's Profile Details</h1>
+        <p className="text-xs lg:text-sm text-gray-600 w-5/6 text-center">
           Comprehensive profile of {doctor.name}, a seasoned {doctor.speciality}{" "}
           with over {doctor.experience} years of experience in diagnosing and
           treating related medical conditions. {doctor.name} is committed to
@@ -57,14 +57,14 @@ function Doctor() {
           patients.
         </p>
       </div>
-      <div className="p-12 mx-10 flex justify-center items-center gap-10 bg-white rounded-3xl shadow-lg">
+      <div className="p-6 lg:p-12 mx-10 flex-col lg:flex justify-center items-center gap-10 bg-white rounded-3xl shadow-lg">
         <img
-          src="/public/img/doctor-sample.png"
+          src="/img/doctor-sample.png"
           alt=""
           srcset=""
           className="h-80 w-auto"
         />
-        <div className="flex flex-col w-4/5">
+        <div className="flex flex-col lg:w-4/5">
           <h1 className="text-3xl font-bold">{doctor.name}</h1>
           <h2 className="text-xl text-gray-600">{doctor.education}</h2>
           <p className="text-xl text-gray-600 mb-2">{doctor.speciality}</p>
@@ -83,7 +83,7 @@ function Doctor() {
             {doctor.availability.map((day, index) => (
               <span
                 key={index}
-                className="btn text-sm btn-sm btn-soft btn-warning rounded-full cursor-default pointer-events-none"
+                className="btn text-xs lg:text-sm btn-sm btn-soft btn-warning rounded-full cursor-default pointer-events-none"
               >
                 {day}
               </span>
@@ -100,15 +100,15 @@ function Doctor() {
         </div>
       </div>
 
-      <div className="p-12 mx-10 flex flex-col gap-4 bg-white rounded-3xl shadow-lg mb-20">
-        <h1 className="text-2xl font-bold text-center">Book an Appointment</h1>
+      <div className="p-6 lg:p-12 mx-10 flex flex-col gap-4 bg-white rounded-3xl shadow-lg mb-6 lg:mb-20">
+        <h1 className="text-md lg:text-2xl font-bold text-center">Book an Appointment</h1>
         <div
           className="
             flex justify-between w-full items-center pt-3
             border-t border-dashed border-t-gray-400
             "
         >
-          <h1 className="text-md font-bold">Availability</h1>
+          <h1 className="text-xs lg:text-md font-bold">Availability</h1>
           {doctor.availability.includes(todayName) ? (
             <span className="btn btn-soft btn-sm btn-success rounded-full cursor-default pointer-events-none">
               Doctor is available today
@@ -121,7 +121,7 @@ function Doctor() {
         </div>
         <hr className=" border-gray-200 border mt-0 w-full" />
 
-        <p className="text-sm bg-orange-50 text-orange-400 items-center rounded-full justify-start w-max p-2">
+        <p className="text-xs lg:text-sm bg-orange-50 text-orange-400 items-center rounded-full justify-start lg:w-max p-2">
           ⓘ Due to high patient volume, we are currently accepting appointments
           for today only. We appreciate your understanding and cooperation.
         </p>

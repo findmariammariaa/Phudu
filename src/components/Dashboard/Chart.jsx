@@ -44,7 +44,7 @@ const TriangleChart = ({ doctors }) => {
   });
 
   return (
-    <div className="bg-white p-6 rounded-3xl shadow-lg my-10">
+    <div className="bg-white mx-3 p-2 lg:p-6 rounded-3xl shadow-lg my-5 lg:my-10">
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={chartData}>
           {/* Grid boxes */}

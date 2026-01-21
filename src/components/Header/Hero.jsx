@@ -2,19 +2,19 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="py-4 mx-auto hero border-4 border-white rounded-2xl bg-linear-to-t  from-white to-gray-200 ">
+    <div className="lg:py-4 mx-auto hero border-4 border-white rounded-2xl bg-linear-to-t  from-white to-gray-200 ">
       <div className="hero-content text-center">
         <div className="max-w-4xl">
-          <h1 className="text-5xl font-semibold">
+          <h1 className="lg:text-5xl 2xl font-semibold">
             Dependable Care, Backed By Trusted Professionals
           </h1>
-          <p className="py-2 text-sm text-gray-700">
+          <p className="py-2 text-xs lg:text-sm text-gray-700">
             Our platform connects you with verified, experienced doctors across
             various specialties — all at your convenience. Whether it's a
             routine checkup or urgent consultation, book appointments in minutes
             and receive quality care you can trust.
           </p>
-          <div className="flex gap-4 justify-center max-w-3xl mx-auto">
+          <div className="flex gap-2 lg:gap-4 justify-center max-w-3xl mx-auto">
             <label className="input w-full flex items-center gap-2 border-2 border-gray-300 rounded-4xl px-4 py-2">
               <svg
                 className="h-[1em] opacity-50"

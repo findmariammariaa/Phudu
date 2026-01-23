@@ -10,8 +10,8 @@ const Error = () => {
   return (
     <>
       <Header></Header>
-      <div className="items-center justify-center flex flex-col min-h-screen bg-red-100">
-        <h1 className="text-4xl font-bold text-red-600">
+      <div className="items-center justify-center flex flex-col min-h-screen bg-red-100 dark:bg-red-700">
+        <h1 className="text-4xl font-bold text-red-600 dark:text-red-300">
           {error?.status || 404}
         </h1>
         <h1 className="text-2xl text-error-content">

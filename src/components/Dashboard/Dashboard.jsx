@@ -12,7 +12,7 @@ function Dashboard() {
         various specialties — all at your convenience.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6 lg:w-9/10 mx-auto mb-10 lg:mb-25">
-        <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white rounded-2xl shadow">
+        <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white dark:bg-gray-700 rounded-2xl shadow">
           <img
             src="/img/success-doctor.png"
             alt=""
@@ -20,10 +20,10 @@ function Dashboard() {
             className="w-12 h-auto"
           />
           <h2 className="text-2xl lg:text-5xl font-bold">199+</h2>
-          <h3 className="text-lg lg:text-xl text-gray-500 font-semibold">Total Doctors</h3>
+          <h3 className="text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 font-semibold">Total Doctors</h3>
         </div>
 
-         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white rounded-2xl shadow">
+         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white dark:bg-gray-700 rounded-2xl shadow">
           <img
             src="/img/success-review.png"
             alt=""
@@ -31,10 +31,10 @@ function Dashboard() {
             className="w-12 h-auto"
           />
           <h2 className="text-2xl lg:text-5xl font-bold"><CountUp delay={1} start={400} end={500} duration={5000} />+</h2>
-          <h3 className="text-lg lg:text-xl text-gray-500 font-semibold">Total Reviews</h3>
+          <h3 className="text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 font-semibold">Total Reviews</h3>
         </div>
 
-         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white rounded-2xl shadow">
+         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white dark:bg-gray-700 rounded-2xl shadow">
           <img
             src="/img/success-patients.png"
             alt=""
@@ -43,10 +43,10 @@ function Dashboard() {
           />
           <h2 className="text-2xl lg:text-5xl font-bold"><CountUp delay={0} start={1900} end={2000} duration={1500} />+</h2>
 
-          <h3 className="text-lg lg:text-xl text-gray-500 font-semibold">Patients</h3>
+          <h3 className="text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 font-semibold">Patients</h3>
         </div>
 
-         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white rounded-2xl shadow">
+         <div className="flex flex-col gap-3 p-8 lg:p-10 bg-white dark:bg-gray-700 rounded-2xl shadow">
           <img
             src="/img/success-staffs.png"
             alt=""
@@ -54,7 +54,7 @@ function Dashboard() {
             className="w-12 h-auto"
           />
           <h2 className="text-2xl lg:text-5xl font-bold">300+</h2>
-          <h3 className="text-lg lg:text-xl text-gray-500 font-semibold">Total Staffs</h3>
+          <h3 className="text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 font-semibold">Total Staffs</h3>
         </div>
       </div>
     </div>

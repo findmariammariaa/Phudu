@@ -2,12 +2,12 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <main className="p-6 bg-base-100 min-h-screen">
+    <main className="p-6 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 min-h-screen">
       <h1 className="text-3xl font-bold text-center mb-8">React Blogs</h1>
 
       {/* Card 1 */}
       <div className="space-y-6">
-        <div className="card bg-base-200 shadow-lg p-6 rounded-lg">
+        <div className="card bg-base-200 dark:bg-gray-700 shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">1. What is useState and how does it work in React?</h2>
           <p>
             <strong>useState</strong> is a React Hook that allows you to add state to functional components. 
@@ -18,7 +18,7 @@ const Blogs = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="card bg-base-200 shadow-lg p-6 rounded-lg">
+        <div className="card bg-base-200 dark:bg-gray-700 shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">2. What is the purpose of useEffect in React?</h2>
           <p>
             <strong>useEffect</strong> lets you perform side effects in functional components, such as data fetching, 
@@ -28,7 +28,7 @@ const Blogs = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="card bg-base-200 shadow-lg p-6 rounded-lg">
+        <div className="card bg-base-200 dark:bg-gray-700 shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">3. What is a custom hook in React and when should you use one?</h2>
           <p>
             A <strong>custom hook</strong> is a JavaScript function that uses React hooks to encapsulate reusable logic. 
@@ -38,7 +38,7 @@ const Blogs = () => {
         </div>
 
         {/* Card 4 */}
-        <div className="card bg-base-200 shadow-lg p-6 rounded-lg">
+        <div className="card bg-base-200 dark:bg-gray-700 shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">4. Difference between controlled and uncontrolled components? Which one is better?</h2>
           <p>
             <strong>Controlled components</strong> have their form data managed by React state, while 
@@ -49,7 +49,7 @@ const Blogs = () => {
         </div>
 
         {/* Card 5 */}
-        <div className="card bg-base-200 shadow-lg p-6 rounded-lg">
+        <div className="card bg-base-200 dark:bg-gray-700 shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">5. Tell us something about useFormStatus()</h2>
           <p>
             <strong>useFormStatus()</strong> is a hook provided by React Server Components or frameworks like Remix to track the submission 

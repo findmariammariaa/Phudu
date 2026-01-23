@@ -44,26 +44,31 @@ const TriangleChart = ({ doctors }) => {
   });
 
   return (
-    <div className="bg-white mx-3 p-2 lg:p-6 rounded-3xl shadow-lg my-5 lg:my-10">
+    <div className="bg-white dark:bg-gray-700 text-black dark:text-white mx-3 p-2 lg:p-6 rounded-3xl shadow-lg my-5 lg:my-10">
       <ResponsiveContainer width="100%" height={350}>
-        <BarChart data={chartData}>
-          {/* Grid boxes */}
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+  <BarChart data={chartData}>
+    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#cbd5e1" /> 
 
-          {/* X and Y axes */}
-          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-          <YAxis interval={0} tickCount={Math.ceil(Math.max(...chartData.map(d => d.fee)) / 200) + 1} />
+    <XAxis dataKey="name" tick={{ fill: "currentColor", fontSize: 12 }} />
+    <YAxis
+      interval={0}
+      tickCount={Math.ceil(Math.max(...chartData.map(d => d.fee)) / 200) + 1}
+      tick={{ fill: "currentColor" }}
+    />
 
-          <Tooltip formatter={(value) => `৳ ${value}`} />
+    <Tooltip
+      formatter={(value) => `৳ ${value}`}
+      contentStyle={{ backgroundColor: 'inherit', color: 'inherit', border: 'none' }}
+    />
 
-          {/* Triangle bars */}
-          <Bar dataKey="fee" shape={<TriangleBar />}>
-            {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={feeColorMap[entry.fee]} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+    <Bar dataKey="fee" shape={<TriangleBar />}>
+      {chartData.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={feeColorMap[entry.fee]} />
+      ))}
+    </Bar>
+  </BarChart>
+</ResponsiveContainer>
+
     </div>
   );
 };

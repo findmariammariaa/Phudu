@@ -27,12 +27,12 @@ const Booking = () => {
 
   return (
     
-    <div className="mx-auto pb-10  px-8 flex flex-col gap-4 bg-gray-100 min-h-screen">
+    <div className="mx-auto pb-10  px-8 flex flex-col gap-4 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 min-h-screen">
       {doctors.length > 0 && <Chart doctors={doctors}/>}
-      <h1 className="text-xl lg:text-2xl font-bold text-center lg:m-10">
+      <h1 className="text-xl lg:text-2xl  font-bold text-center lg:m-10">
         My Today Appointments
       </h1>
-      {doctors.length > 0?(<p className="text-xs lg:text-sm max-w-3xl mx-auto text-gray-500 text-center">
+      {doctors.length > 0?(<p className="text-xs lg:text-sm max-w-3xl mx-auto text-neutral-600 dark:text-neutral-300 text-center">
         Our platform connects you with verified, experienced doctors across
         various specialties — all at your convenience.
       </p>):null}
@@ -42,11 +42,11 @@ const Booking = () => {
         doctors.map((doctor) => (
           <div
             key={doctor.id}
-            className="p-6 bg-white rounded-xl shadow-sm flex flex-col gap-4"
+            className="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-sm flex flex-col gap-4"
           >
-            <div className="flex-col lg:flex justify-between border-b rounded-xl border-dashed border-gray-400 pb-3">
-              <div>
-                <h1 className="text-2xl font-semibold">{doctor.name}</h1>
+            <div className="flex-col lg:flex justify-between border-b rounded-xl border-dashed  border-gray-400 pb-3">
+              <div >
+                <h1 className="text-2xl font-bold">{doctor.name}</h1>
                 <h2 className="text-lg font-semibold text-gray-400">
                   {doctor.speciality}, {doctor.education}
                 </h2> 

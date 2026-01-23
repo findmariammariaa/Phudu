@@ -23,7 +23,7 @@ const todayName = days[today.getDay()];
         {displayedDoctors.map((doctor) => (
           <div
             key={doctor.id}
-            className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow"
+            className="flex flex-col gap-3 p-4 bg-white dark:bg-gray-700 rounded-2xl shadow"
           >
             <img
               src="img/image.png"
@@ -34,18 +34,18 @@ const todayName = days[today.getDay()];
             <div className="flex gap-2">
               {
                 doctor.availability.includes(todayName) ? (
-                   <span className="btn btn-soft btn-success rounded-full cursor-default pointer-events-none">
+                   <span className="btn btn-soft btn-success text-xs rounded-full cursor-default pointer-events-none">
                 Available
               </span>
               ) :
               (
-                 <span className="btn btn-soft btn-error rounded-full cursor-default pointer-events-none"> 
+                 <span className="btn btn-soft btn-error text-xs rounded-full cursor-default pointer-events-none"> 
                 Unvailable
               </span>
               )
               }
              
-              <span className="btn btn-soft btn-info rounded-full cursor-default pointer-events-none">
+              <span className="btn btn-soft btn-info rounded-full text-xs cursor-default pointer-events-none">
                 {doctor.experience}+ Years Experience
               </span>
             </div>
@@ -58,7 +58,7 @@ const todayName = days[today.getDay()];
             <p className="border-b-2 border-dashed border-b-gray-300 pb-2 text-sm">{doctor.speciality}, {doctor.designation}</p>
 
             <p className="text-sm  items-center flex ">
-              <span className="text-xl font-bold mt-1">®</span>Reg No:{" "}
+              <span className="text-xl font-semibold mr-2">® </span>{" "} Reg No: {" "}
               {doctor.registrationNumber}
             </p>
 

@@ -3,12 +3,10 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Root from "../pages/Root/Root";
-import Details from "../components/Details/Details";
 import Home from "../components/Home/Home";
 import Blogs from "../pages/Blogs/Blogs";
 import Error from "../pages/Error/Error";
 import Booking from "../components/Booking/Booking";
-import ErrorMsg from "../components/ErrorMsg/ErrorMsg";
 import Doctor from "../components/Doctor/Doctor";
 export const router = createBrowserRouter([
   {

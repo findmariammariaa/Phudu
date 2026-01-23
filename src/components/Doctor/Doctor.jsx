@@ -45,10 +45,10 @@ function Doctor() {
   };
 
   return (
-    <div className=" bg-gray-100 min-h-screen flex flex-col gap-6 lg:gap-10">
-      <div className="p-1 lg:p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white rounded-3xl shadow-lg">
+    <div className=" bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col gap-6 lg:gap-10">
+      <div className="p-1 lg:p-12 mx-10 flex flex-col justify-center items-center gap-4 bg-white dark:bg-gray-700 rounded-3xl shadow-lg">
         <h1 className="text-xl lg:text-2xl font-bold mt-4 ">Doctor's Profile Details</h1>
-        <p className="text-xs lg:text-sm text-gray-600 w-5/6 text-center">
+        <p className="text-xs lg:text-sm text-neutral-600 dark:text-neutral-300 w-5/6 text-center">
           Comprehensive profile of {doctor.name}, a seasoned {doctor.speciality}{" "}
           with over {doctor.experience} years of experience in diagnosing and
           treating related medical conditions. {doctor.name} is committed to
@@ -57,24 +57,24 @@ function Doctor() {
           patients.
         </p>
       </div>
-      <div className="p-6 lg:p-12 mx-10 lg:flex justify-center items-center gap-10 bg-white rounded-3xl shadow-lg">
+      <div className="p-6 lg:p-12 mx-10 lg:flex justify-center items-center gap-10 bg-white dark:bg-gray-700 rounded-3xl shadow-lg">
         <img
           src="/img/doctor-sample.png"
           alt=""
           srcset=""
           className="h-80 w-auto"
         />
-        <div className="flex flex-col lg:w-4/5">
+        <div className="flex flex-col text-neutral-600 dark:text-neutral-300 lg:w-4/5">
           <h1 className="text-3xl font-bold">{doctor.name}</h1>
-          <h2 className="text-xl text-gray-600">{doctor.education}</h2>
-          <p className="text-xl text-gray-600 mb-2">{doctor.speciality}</p>
+          <h2 className="text-xl text-gray-600 dark:text-gray-300">{doctor.education}</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">{doctor.speciality}</p>
           <p className="text-gray-400 text-md">Working at</p>
-          <p className="text-xl font-bold text-black my-4">
+          <p className="text-xl font-bold text-black dark:text-white my-4">
             {" "}
             {doctor.workplace}
           </p>
           <p className="text-sm  items-center flex border-y-2 border-dashed border-y-gray-200 pb-2">
-            <span className="text-xl font-bold mt-1 ">®</span>Reg No:{" "}
+            <span className="text-xl font-semibold mr-2 ">®</span>Reg No:{" "}
             {doctor.registrationNumber}
           </p>
 
@@ -89,7 +89,7 @@ function Doctor() {
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center ">
             <h1 className="text-sm font-semibold">Consultation Fee: </h1>
             <h2 className="text-sm text-blue-500 font-semibold">
               Taka :{doctor.fee}{" "}
@@ -100,7 +100,7 @@ function Doctor() {
         </div>
       </div>
 
-      <div className="p-6 lg:p-12 mx-10 flex flex-col gap-4 bg-white rounded-3xl shadow-lg mb-6 lg:mb-20">
+      <div className="p-6 lg:p-12 mx-10 flex flex-col gap-4 bg-white dark:bg-gray-700 rounded-3xl shadow-lg mb-6 lg:mb-20">
         <h1 className="text-md lg:text-2xl font-bold text-center">Book an Appointment</h1>
         <div
           className="
@@ -108,7 +108,7 @@ function Doctor() {
             border-t border-dashed border-t-gray-400
             "
         >
-          <h1 className="text-xs lg:text-md font-bold">Availability</h1>
+          <h1 className="text-xs lg:text-lg">Availability</h1>
           {doctor.availability.includes(todayName) ? (
             <span className="btn btn-soft btn-sm btn-success rounded-full cursor-default pointer-events-none">
               Doctor is available today

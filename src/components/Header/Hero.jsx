@@ -2,13 +2,13 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="lg:py-4 mx-auto hero border-4 border-white rounded-2xl bg-linear-to-t  from-white to-gray-200 ">
+    <div className="lg:py-4 mx-auto hero border-4 border-white rounded-2xl bg-gradient-to-t from-white to-gray-200 dark:from-gray-800 dark:to-gray-700">
       <div className="hero-content text-center">
         <div className="max-w-4xl">
           <h1 className="lg:text-5xl 2xl font-semibold">
             Dependable Care, Backed By Trusted Professionals
           </h1>
-          <p className="py-2 text-xs lg:text-sm text-gray-700">
+          <p className="py-2 text-xs lg:text-sm text-neutral-600 dark:text-neutral-300">
             Our platform connects you with verified, experienced doctors across
             various specialties — all at your convenience. Whether it's a
             routine checkup or urgent consultation, book appointments in minutes
